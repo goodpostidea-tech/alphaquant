@@ -1,270 +1,361 @@
-# NOF1.AI Alpha Arena 项目分析文档
+# Alpha Quant
 
-> **Alpha Arena** - 让AI用真钱在真实市场中竞赛的创新平台
+<div align="center">
 
----
+**AI-Driven Quantitative Trading Terminal**
 
-## 🎯 这是什么？
+[English](#english) | [中文](#中文)
 
-**Alpha Arena** 是由 [NOF1](https://thenof1.com) 开发的 AI 交易竞技平台，它让 6 个主流大语言模型在真实的加密货币市场中进行自主交易竞赛。
+[![GitHub](https://img.shields.io/badge/GitHub-alphaquant-black?style=flat&logo=github)](https://github.com/goodpostidea-tech/alphaquant)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-16.0.10-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-### 核心亮点
-- 💰 **真实资金**：每个AI获得 $10,000 真实USDC
-- 🤖 **完全自主**：AI独立决策，无人为干预
-- 📊 **完全透明**：所有对话和交易记录公开
-- 🔗 **可验证性**：所有交易可在区块链上验证
-- 🏆 **公平竞争**：统一提示词和数据输入
-
----
-
-## 📚 文档导航
-
-### 快速开始（10分钟了解核心）
-
-| 文档 | 内容 | 阅读时长 |
-|------|------|---------|
-| **[01-项目概述](docs/01-项目概述.md)** ⭐ | 项目简介、竞赛规则、当前战况 | 5分钟 |
-| **[02-技术架构](docs/02-技术架构.md)** ⭐ | 前后端技术栈、数据库设计 | 10分钟 |
-
-### 页面功能详解（了解产品）
-
-| 文档 | 内容 | 阅读时长 |
-|------|------|---------|
-| **[03-首页详解](docs/03-首页详解.md)** | LIVE页面、4个标签页详细分析 | 15分钟 |
-| **[04-排行榜页面](docs/04-排行榜页面.md)** | 排行榜、指标解读、数据对比 | 10分钟 |
-| **[05-模型详情页](docs/05-模型详情页.md)** | 单模型深度分析、持仓详情 | 15分钟 |
-
-### 技术实现（开发必读）
-
-| 文档 | 内容 | 阅读时长 |
-|------|------|---------|
-| **[06-核心功能实现](docs/06-核心功能实现.md)** | 实时更新、AI决策、图表渲染 | 20分钟 |
-| **[07-开发指南](docs/07-开发指南.md)** | 开发路线图、成本估算、检查清单 | 25分钟 |
-| **[08-技术难点](docs/08-技术难点.md)** | 常见问题与解决方案 | 15分钟 |
-
-### 展望与总结
-
-| 文档 | 内容 | 阅读时长 |
-|------|------|---------|
-| **[09-扩展功能](docs/09-扩展功能.md)** | 未来功能规划、商业化方向 | 15分钟 |
-| **[10-项目总结](docs/10-项目总结.md)** | 关键洞察、经验教训、最佳实践 | 10分钟 |
-| **[11-MCP服务功能与提示词分析](docs/11-MCP服务功能与提示词分析.md)** ⭐ | MCP服务完整分析、系统提示词、用户提示词 | 30分钟 |
+</div>
 
 ---
 
-## 🏆 当前竞赛结果（2025-10-23）
+## English
 
-### 排行榜
+### Overview
 
-| 排名 | 模型 | 账户价值 | 回报率 | 交易次数 | 胜率 | Sharpe | 策略特征 |
-|------|------|----------|--------|----------|------|--------|---------|
-| 🥇 | **DeepSeek Chat V3.1** | $10,592 | **+5.92%** | 9 | 11.1% | **1.107** | 低频长线 ✅ |
-| 🥈 | **Qwen3 Max** | $10,060 | +0.6% | 22 | **31.8%** | -0.130 | 极端集中 ⚠️ |
-| 🥉 | **Grok 4** | $8,585 | -14.15% | 9 | 11.1% | 0.586 | 混合策略 |
-| 4 | Claude Sonnet 4.5 | $8,232 | -17.68% | 12 | 16.7% | 0.164 | 波动较大 |
-| 5 | Gemini 2.5 Pro | $4,579 | -54.21% | **102** | 27.5% | -1.085 | 过度交易 ❌ |
-| 6 | GPT 5 | $3,209 | **-67.91%** | 39 | **5.1%** | -0.874 | 质量最差 ❌ |
+Alpha Quant is an autonomous AI-driven quantitative trading terminal that leverages multiple Large Language Models (LLMs) to make intelligent trading decisions. The platform provides a Bloomberg-style professional trading interface with real-time market data, strategy management, risk controls, and comprehensive performance analytics.
 
-### 关键发现 💡
+### ✨ Key Features
 
-#### 🏆 DeepSeek 为什么能赢？
-- ✅ **质量>数量**：仅9笔交易，但质量高
-- ✅ **风险控制**：Sharpe比率1.107（唯一>1的）
-- ✅ **策略一致**：93.6%时间做多，方向明确
-- ✅ **耐心等待**：不追涨杀跌，等待好机会
+- **🤖 Multi-Model Consensus Trading**: Orchestrates multiple LLM providers (DeepSeek, GPT, Claude) to generate trading decisions through consensus mechanisms
+- **📊 Professional Trading Terminal**: Bloomberg-inspired UI with real-time charts, market tickers, and performance dashboards
+- **⚡ Real-Time Market Data**: Live price feeds and market sentiment analysis
+- **🎯 Strategy Management**: Create, deploy, and monitor multiple trading strategies simultaneously
+- **🛡️ Risk Management**: Comprehensive risk controls including position limits, leverage caps, and exposure monitoring
+- **📈 Performance Analytics**: Track Sharpe ratio, maximum drawdown, alpha, and other key metrics
+- **👥 Multi-User Support**: User authentication and role-based access control
+- **🌐 Internationalization**: Full support for English and Chinese (中文)
 
-#### 📉 Gemini 为什么亏损最严重？
-- ❌ **过度交易**：102笔交易，远超其他模型
-- ❌ **高额手续费**：$890.61，占初始资金8.9%
-- ❌ **决策质量差**：胜率27.5%无法覆盖成本
-- ❌ **短线失败**：高频短线策略在币圈失效
-
-#### ⚠️ GPT 5 为什么垫底？
-- ❌ **决策质量最差**：胜率仅5.1%
-- ❌ **风险管理差**：使用25X极端杠杆
-- ❌ **无明确策略**：多空混乱，无方向
-- ❌ **连续亏损**：39笔交易，仅2笔盈利
-
----
-
-## 🚀 技术栈概览
+### 🏗️ Architecture
 
 ```
-前端:
-  框架: Next.js 14 + React 18 + TypeScript
-  样式: Tailwind CSS + 自定义CSS
-  图表: Chart.js / Recharts
-  状态: Zustand / Context API
-  字体: IBM Plex Mono（终端风格）
-  
-后端:
-  API: Next.js API Routes
-  数据库: PostgreSQL (Supabase/Neon)
-  缓存: Redis (Upstash)
-  ORM: Prisma
-  
-交易:
-  平台: Hyperliquid (去中心化永续合约)
-  集成: REST API / SDK
-  
-AI:
-  模型: GPT-5, Claude 4.5, Gemini 2.5, Grok 4, DeepSeek V3.1, Qwen 3 Max
-  调用: 各家官方API
-  
-部署:
-  平台: Vercel
-  监控: Sentry + Vercel Analytics
-  日志: Datadog / LogRocket
+alpha-quant/
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── api/            # API routes (auth, quant cycles)
+│   │   └── page.tsx        # Main dashboard
+│   ├── components/         # React components
+│   │   ├── TopNavBar.tsx
+│   │   ├── AccountValueChart.tsx
+│   │   ├── QuantLog.tsx
+│   │   ├── CompactStrategyPanel.tsx
+│   │   └── ...
+│   ├── lib/                # Core libraries
+│   │   ├── llm/           # LLM adapters & orchestrator
+│   │   ├── hyperliquid.ts # Exchange integration
+│   │   ├── AuthContext.tsx
+│   │   ├── StrategyContext.tsx
+│   │   └── RiskContext.tsx
+│   └── i18n/              # Internationalization
+├── prisma/
+│   └── schema.prisma      # Database schema
+└── public/                # Static assets
 ```
+
+### 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript 5
+- **UI**: React 19, Tailwind CSS 4
+- **Database**: Prisma ORM + SQLite
+- **Charts**: Chart.js, react-chartjs-2
+- **Authentication**: JWT (jose)
+- **Icons**: Lucide React
+
+### 📋 Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### 🚀 Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/goodpostidea-tech/alphaquant.git
+   cd alphaquant
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Set up the database**
+   ```bash
+   npx prisma generate
+   npx prisma migrate dev
+   ```
+
+4. **Configure environment variables**
+   Create a `.env` file in the root directory:
+   ```env
+   DATABASE_URL="file:./dev.db"
+   JWT_SECRET="your-secret-key-here"
+   # Add API keys for LLM providers if needed
+   DEEPSEEK_API_KEY=""
+   OPENAI_API_KEY=""
+   ANTHROPIC_API_KEY=""
+   ```
+
+5. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+6. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### 📖 Usage
+
+#### Creating Trading Models
+
+1. Navigate to the model management section via the settings icon
+2. Add a new model with its API endpoint or wallet address
+3. Configure trading parameters and risk limits
+4. Activate the model to start autonomous trading
+
+#### Strategy Management
+
+- Create multiple strategies with different risk profiles
+- Monitor strategy performance in real-time
+- Pause or resume strategies as needed
+- View detailed statistics including Sharpe ratio, max drawdown, and alpha
+
+#### Risk Controls
+
+- Set maximum position size limits
+- Configure leverage caps per strategy
+- Monitor total exposure across all positions
+- Set stop-loss and take-profit levels
+
+### 🗄️ Database Schema
+
+The application uses Prisma with SQLite and includes models for:
+
+- **User**: Authentication and user management
+- **Model**: AI trading models configuration
+- **Trade**: Historical trade records
+- **Position**: Current open positions
+- **Conversation**: LLM interaction logs
+- **AccountSnapshot**: Account value history
+- **PriceHistory**: Market price data
+
+### 🔌 API Endpoints
+
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
+- `POST /api/auth/logout` - User logout
+- `GET /api/quant/cycle` - Run a trading decision cycle
+
+### 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### ⚠️ Disclaimer
+
+This software is for educational and research purposes only. Trading cryptocurrencies and other financial instruments involves substantial risk of loss. Past performance is not indicative of future results. Always trade responsibly and never invest more than you can afford to lose.
+
+### 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+### 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- UI inspired by Bloomberg Terminal and [nof1](https://nof1.ai/)
+- Database management with [Prisma](https://www.prisma.io/)
 
 ---
 
-## 💰 成本估算
+## 中文
 
-### 月运营成本
-- **LLM API**：~$475/月（6个模型，每15分钟调用一次）
-- **基础设施**：~$100/月（Vercel + 数据库 + Redis）
-- **监控**：~$26/月（Sentry）
-- **总计**：约 **$600/月**
+### 项目概述
 
-### 初始投入
-- **开发成本**：$30,000-50,000（或3个月自主开发）
-- **交易资金**：$70,000（可回收）
-- **总计**：$100,000-120,000
+Alpha Quant 是一个自主驱动的 AI 量化交易终端，利用多个大语言模型（LLM）做出智能交易决策。该平台提供 Bloomberg 风格的专业交易界面，包含实时市场数据、策略管理、风险控制和全面的性能分析。
 
----
+### ✨ 核心功能
 
-## 📁 项目结构
+- **🤖 多模型共识交易**：协调多个 LLM 提供商（DeepSeek、GPT、Claude）通过共识机制生成交易决策
+- **📊 专业交易终端**：受 Bloomberg 启发的界面，包含实时图表、市场行情和性能仪表板
+- **⚡ 实时市场数据**：实时价格推送和市场情绪分析
+- **🎯 策略管理**：同时创建、部署和监控多个交易策略
+- **🛡️ 风险管理**：全面的风险控制，包括持仓限制、杠杆上限和敞口监控
+- **📈 性能分析**：跟踪夏普比率、最大回撤、阿尔法等关键指标
+- **👥 多用户支持**：用户认证和基于角色的访问控制
+- **🌐 国际化**：完整支持英文和中文
+
+### 🏗️ 项目架构
 
 ```
-D:\dev\aitrader\
-├── README.md                          # 🏠 本文件（项目概览）
-├── 文档结构说明.md                   # 📖 文档使用指南
-├── docs/                              # 📂 详细分析文档
-│   ├── 01-项目概述.md                # 项目简介、规则、战况
-│   ├── 02-技术架构.md                # 技术栈、数据库、部署
-│   ├── 03-首页详解.md                # LIVE页面详细分析
-│   ├── 04-排行榜页面.md              # Leaderboard分析
-│   ├── 05-模型详情页.md              # 模型详情页分析
-│   ├── 06-核心功能实现.md            # 实时更新、AI决策
-│   ├── 07-开发指南.md                # 路线图、成本、清单
-│   ├── 08-技术难点.md                # 难点与解决方案
-│   ├── 09-扩展功能.md                # 未来功能规划
-│   ├── 10-项目总结.md                # 洞察、最佳实践
-│   └── 11-MCP服务功能与提示词分析.md # MCP服务、完整提示词
-└── nof1-ai-项目分析文档-原始版本-已归档.md  # 📦 原始完整文档（备份）
+alpha-quant/
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── api/            # API 路由 (认证、量化周期)
+│   │   └── page.tsx        # 主仪表板
+│   ├── components/         # React 组件
+│   │   ├── TopNavBar.tsx
+│   │   ├── AccountValueChart.tsx
+│   │   ├── QuantLog.tsx
+│   │   ├── CompactStrategyPanel.tsx
+│   │   └── ...
+│   ├── lib/                # 核心库
+│   │   ├── llm/           # LLM 适配器和编排器
+│   │   ├── hyperliquid.ts # 交易所集成
+│   │   ├── AuthContext.tsx
+│   │   ├── StrategyContext.tsx
+│   │   └── RiskContext.tsx
+│   └── i18n/              # 国际化
+├── prisma/
+│   └── schema.prisma      # 数据库模式
+└── public/                # 静态资源
 ```
 
----
+### 🛠️ 技术栈
 
-## 🎓 推荐阅读路线
+- **框架**: Next.js 16 (App Router)
+- **语言**: TypeScript 5
+- **UI**: React 19, Tailwind CSS 4
+- **数据库**: Prisma ORM + SQLite
+- **图表**: Chart.js, react-chartjs-2
+- **认证**: JWT (jose)
+- **图标**: Lucide React
 
-### 路线A：快速了解（20分钟）
-```
-README.md (本文件)
-  ↓
-docs/01-项目概述.md
-  ↓
-docs/03-首页详解.md (重点查看实际页面截图分析)
-```
+### 📋 环境要求
 
-### 路线B：技术开发（2.5小时）
-```
-docs/01-项目概述.md
-  ↓
-docs/02-技术架构.md
-  ↓
-docs/06-核心功能实现.md
-  ↓
-docs/11-MCP服务功能与提示词分析.md ⭐ 新增
-  ↓
-docs/07-开发指南.md
-  ↓
-docs/08-技术难点.md
-```
+- Node.js 18+
+- npm、yarn、pnpm 或 bun
 
-### 路线C：产品设计（1.5小时）
-```
-docs/01-项目概述.md
-  ↓
-docs/03-首页详解.md
-  ↓
-docs/04-排行榜页面.md
-  ↓
-docs/05-模型详情页.md
-  ↓
-docs/10-项目总结.md
-```
+### 🚀 快速开始
 
-### 路线D：商业分析（1小时）
-```
-docs/01-项目概述.md
-  ↓
-docs/07-开发指南.md (查看成本估算部分)
-  ↓
-docs/09-扩展功能.md (查看商业化方向)
-  ↓
-docs/10-项目总结.md
-```
+1. **克隆仓库**
+   ```bash
+   git clone https://github.com/goodpostidea-tech/alphaquant.git
+   cd alphaquant
+   ```
 
----
+2. **安装依赖**
+   ```bash
+   npm install
+   # 或
+   yarn install
+   # 或
+   pnpm install
+   ```
 
-## 📊 文档统计
+3. **设置数据库**
+   ```bash
+   npx prisma generate
+   npx prisma migrate dev
+   ```
 
-- **总文档数**：12个
-- **总字数**：约65,000+
-- **代码示例**：60+
-- **架构图**：12+
-- **表格**：25+
-- **覆盖章节**：16个主题
+4. **配置环境变量**
+   在根目录创建 `.env` 文件：
+   ```env
+   DATABASE_URL="file:./dev.db"
+   JWT_SECRET="your-secret-key-here"
+   # 如需使用 LLM 提供商，添加 API 密钥
+   DEEPSEEK_API_KEY=""
+   OPENAI_API_KEY=""
+   ANTHROPIC_API_KEY=""
+   ```
 
----
+5. **启动开发服务器**
+   ```bash
+   npm run dev
+   # 或
+   yarn dev
+   # 或
+   pnpm dev
+   ```
 
-## 🔗 相关链接
+6. **打开浏览器**
+   访问 [http://localhost:3000](http://localhost:3000)
 
-- **项目官网**：https://nof1.ai/
-- **开发团队**：https://thenof1.com
-- **交易所**：https://hyperliquid.xyz/
-- **技术文档**：https://hyperliquid.gitbook.io/hyperliquid-docs
-- **示例钱包**：[CoinGlass浏览器](https://www.coinglass.com/hyperliquid/0xc20ac4dc4188660cbf555448af52694ca62b0734)
+### 📖 使用指南
 
----
+#### 创建交易模型
 
-## 📝 文档更新记录
+1. 通过设置图标进入模型管理部分
+2. 添加新模型，配置其 API 端点或钱包地址
+3. 配置交易参数和风险限制
+4. 激活模型以开始自主交易
 
-| 日期 | 版本 | 说明 |
-|------|------|------|
-| 2025-10-23 | 3.1 | 新增第11篇：MCP服务功能与提示词完整分析 |
-| 2025-10-23 | 3.0 | 重构为10个主题文档，结构清晰 |
-| 2025-10-23 | 2.1 | 简化结构，避免编码问题 |
-| 2025-10-23 | 1.0 | 初始版本（单一大文档） |
+#### 策略管理
 
----
+- 创建具有不同风险特征的多个策略
+- 实时监控策略性能
+- 根据需要暂停或恢复策略
+- 查看详细统计信息，包括夏普比率、最大回撤和阿尔法
 
-## ⚠️ 免责声明
+#### 风险控制
 
-- 本文档仅供学习和研究使用
-- 技术实现为推测性分析，实际可能不同  
-- 加密货币交易有高风险，请谨慎投资
-- 数据截至2025-10-23，仅供参考
+- 设置最大持仓规模限制
+- 为每个策略配置杠杆上限
+- 监控所有持仓的总敞口
+- 设置止损和止盈水平
 
----
+### 🗄️ 数据库模式
 
-## 💬 反馈与建议
+应用程序使用 Prisma 和 SQLite，包含以下模型：
 
-如果你：
-- ✅ 发现文档错误
-- ✅ 有改进建议
-- ✅ 想要补充内容
-- ✅ 有技术问题
+- **User**: 认证和用户管理
+- **Model**: AI 交易模型配置
+- **Trade**: 历史交易记录
+- **Position**: 当前开仓持仓
+- **Conversation**: LLM 交互日志
+- **AccountSnapshot**: 账户价值历史
+- **PriceHistory**: 市场价格数据
 
-欢迎提出Issue或Pull Request！
+### 🔌 API 端点
 
----
+- `POST /api/auth/register` - 用户注册
+- `POST /api/auth/login` - 用户登录
+- `GET /api/auth/me` - 获取当前用户
+- `POST /api/auth/logout` - 用户登出
+- `GET /api/quant/cycle` - 运行交易决策周期
 
-**祝你项目成功！** 🎉🚀
+### 🤝 贡献
 
----
+欢迎贡献！请随时提交 Pull Request。对于重大更改，请先打开 issue 讨论您想要更改的内容。
 
-*本文档由AI助手基于实际浏览器访问和技术分析编写*  
-*最后更新：2025-10-23*
+1. Fork 本仓库
+2. 创建您的功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m '添加一些 AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开 Pull Request
+
+### ⚠️ 免责声明
+
+本软件仅供教育和研究 purposes。交易加密货币和其他金融工具涉及重大损失风险。过往表现不代表未来结果。请负责任地交易，永远不要投入超过您能承受损失的资金。
+
+### 📄 许可证
+
+本项目采用 MIT 许可证 - 有关详细信息，请参阅 LICENSE 文件。
+
+### 🙏 致谢
+
+- 使用 [Next.js](https://nextjs.org/) 构建
+- UI 灵感来自 Bloomberg Terminal 和 [nof1](https://nof1.ai/)
+- 使用 [Prisma](https://www.prisma.io/) 进行数据库管理

@@ -1,0 +1,184 @@
+{
+    "common": {
+        "dashboard": "总览",
+        "strategies": "策略管理",
+        "risk": "风险控制",
+        "marketData": "市场数据",
+        "systemLogs": "系统日志",
+        "settings": "系统设置",
+        "proTier": "专业版",
+        "totalEquities": "总权益",
+        "sessionAlpha": "会话收益",
+        "error": "出错了"
+    },
+    "terminal": {
+        "liveTerminal": "实时终端",
+        "wssConnected": "WSS 已连接",
+        "councilConsensus": "委员会共识",
+        "highConjunction": "高度契合",
+        "initializingTerminal": "正在初始化 Alpha 量化终端..."
+    },
+    "dashboard": {
+        "title": "AlphaQuant 股票量化终端",
+        "status": "股票市场分析已激活 | 模式: 自主交易",
+        "performanceBenchmark": "策略表现基准 (Alpha vs S&P 500)",
+        "agentMatrix": "智能体风控矩阵",
+        "benchmarkTitle": "智能体基准测试 (实时)",
+        "consensusNote": "当前各模型对看涨动能表现出 % {value} 的高度一致。"
+    },
+    "table": {
+        "agent": "策略智能体",
+        "sharpe": "夏普比率",
+        "maxDD": "最大回撤",
+        "alpha": "阿尔法"
+    },
+    "exposure": {
+        "liveRatio": "权益类资产暴露率",
+        "totalCapital": "总本金",
+        "cash": "现金比例"
+    },
+    "agentStats": {
+        "confidence": "置信度",
+        "stability": "稳定性",
+        "latency": "延迟",
+        "conf": "置信"
+    },
+    "footer": {
+        "marketStatus": "NASDAQ 已连接"
+    },
+    "topNav": {
+        "home": "首页",
+        "terminal": "股票交易终端",
+        "sentiment": "市场情绪",
+        "bullish": "看涨",
+        "bearish": "看跌",
+        "network": "网络",
+        "ping": "时延",
+        "searchPlaceholder": "搜索股票代码 (如 NVDA, TSLA)..."
+    },
+    "strategies": {
+        "title": "策略管理矩阵",
+        "config": "配置",
+        "globalControls": "全局风险控制",
+        "pauseAll": "一键熔断",
+        "resumeAll": "恢复运行",
+        "liquidateAll": "清空持仓",
+        "active": "运行中",
+        "paused": "已暂停",
+        "initializing": "初始化",
+        "perfDrift": "阿尔法漂移",
+        "maxPosition": "个股限仓 %",
+        "stopLoss": "硬止损 %",
+        "volGate": "波动率闸门 (VIX)",
+        "marketStatus": "市场状态",
+        "session": {
+            "regular": "常规交易段",
+            "pre": "盘前交易",
+            "after": "盘后交易",
+            "closed": "已休市"
+        },
+        "modal": {
+            "title": "策略参数配置",
+            "save": "保存更改",
+            "cancel": "取消",
+            "maxPosDesc": "最大持仓占比 (% 总权益)",
+            "stopLossDesc": "硬止损触发比例 (%)"
+        },
+        "deployModal": {
+            "title": "部署新智能体",
+            "name": "智能体名称",
+            "provider": "模型提供商 (如 OpenAI)",
+            "symbol": "目标标的",
+            "maxPos": "最大仓位 %",
+            "stopLoss": "止损 %",
+            "deploy": "立即部署",
+            "cancel": "取消"
+        }
+    },
+    "risk": {
+        "title": "风险卫士",
+        "systemStatus": "系统状态",
+        "profile": "风控偏好",
+        "healthScore": "健康评分",
+        "dailyBudget": "今日风险预算",
+        "dailyRiskBudget": "每日风险预算",
+        "used": "已占用",
+        "vix": "波动率 (VIX)",
+        "exposure": "敞口暴露",
+        "liveAlerts": "实时警报",
+        "activeTriggers": "活跃触发器",
+        "riskLogs": "风险日志",
+        "eventHistory": "历史事件",
+        "noAlerts": "系统运行正常",
+        "allSystemsNominal": "所有系统正常",
+        "noHistory": "暂无历史事件",
+        "noHistoricalEvents": "暂无历史事件",
+        "ack": "确认",
+        "status": {
+            "normal": "正常",
+            "warning": "警告",
+            "defense": "防御",
+            "halt": "熔断"
+        },
+        "settings": {
+            "title": "风险偏好配置",
+            "desc": "选择风险偏好以动态调整全局熔断机制和敞口限制。",
+            "conservative": {
+                "label": "保守型",
+                "desc": "优先保本。极其严格的风控限制。"
+            },
+            "growth": {
+                "label": "稳健型 (默认)",
+                "desc": "平衡收益与风险，追求稳定复利。"
+            },
+            "aggressive": {
+                "label": "激进型",
+                "desc": "最大化杠杆，追求高赔率机会。"
+            },
+            "maxDD": "最大回撤",
+            "maxDrawdown": "最大回撤",
+            "vixWarning": "VIX 预警",
+            "done": "完成"
+        }
+    },
+    "models": {
+        "title": "模型管理",
+        "addTitle": "添加新模型网络",
+        "desc": "配置您的 AI 大脑和 API 连接",
+        "addDesc": "连接到新的 LLM 提供商",
+        "activeModels": "活跃模型",
+        "endpointMetrics": "终端指标",
+        "addBtn": "添加模型",
+        "connectBtn": "连接模型",
+        "disconnect": "断开连接",
+        "connect": "连接",
+        "cancel": "取消",
+        "done": "完成",
+        "name": "模型名称",
+        "provider": "提供商",
+        "apiKey": "API 密钥",
+        "endpoint": "终端 URL (可选)",
+        "status": "状态",
+        "lastActive": "最后活跃",
+        "systemOptimal": "系统状态: 最佳"
+    },
+    "auth": {
+        "title": "终端访问",
+        "regTitle": "创建操作员账户",
+        "desc": "AlphaQuant 自主交易节点",
+        "signIn": "登录",
+        "register": "注册",
+        "name": "全名",
+        "email": "电子邮件地址",
+        "password": "密码",
+        "namePlaceholder": "输入您的姓名",
+        "emailPlaceholder": "name@company.com",
+        "passPlaceholder": "••••••••",
+        "loading": "身份验证中...",
+        "enter": "进入终端",
+        "create": "创建操作员",
+        "secure": "安全的 AES-256 加密会话",
+        "logout": "登出",
+        "operator": "操作员"
+    }
+}

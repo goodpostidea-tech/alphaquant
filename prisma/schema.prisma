@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Model {
+  id              String           @id
+  name            String
+  provider        String?
+  walletAddress   String?          @unique
+  apiEndpoint     String?
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  trades          Trade[]
+  positions       Position[]
+  conversations   Conversation[]
+  accountSnapshots AccountSnapshot[]
+}
+
+model Trade {
+  id              Int       @id @default(autoincrement())
+  modelId         String
+  model           Model     @relation(fields: [modelId], references: [id])
+  coin            String
+  side            String    // "LONG" | "SHORT"
+  entryPrice      Float?
+  exitPrice       Float?
+  quantity        Float?
+  leverage        Int?
+  entryTime       DateTime?
+  exitTime        DateTime?
+  notionalEntry   Float?
+  notionalExit    Float?
+  fees            Float?
+  netPnl          Float?
+  holdingDuration String?   // Interval as string or ISO duration
+  createdAt       DateTime  @default(now())
+
+  @@index([modelId, entryTime(sort: Desc)])
+}
+
+model Position {
+  id               Int      @id @default(autoincrement())
+  modelId          String
+  model            Model    @relation(fields: [modelId], references: [id])
+  coin             String
+  side             String
+  entryPrice       Float?
+  entryTime        DateTime?
+  quantity         Float?
+  leverage         Int?
+  liquidationPrice Float?
+  margin           Float?
+  unrealizedPnl    Float?
+  exitPlan         String?
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([modelId, isActive])
+}
+
+model Conversation {
+  id              Int      @id @default(autoincrement())
+  modelId         String
+  model           Model    @relation(fields: [modelId], references: [id])
+  prompt          String?
+  response        String?
+  decision        Json?
+  confidence      Float?
+  executionStatus String?
+  timestamp       DateTime @default(now())
+
+  @@index([modelId, timestamp(sort: Desc)])
+}
+
+model AccountSnapshot {
+  id            Int      @id @default(autoincrement())
+  modelId       String
+  model         Model    @relation(fields: [modelId], references: [id])
+  totalValue    Float?
+  cashAvailable Float?
+  unrealizedPnl Float?
+  realizedPnl   Float?
+  timestamp     DateTime @default(now())
+
+  @@index([modelId, timestamp(sort: Desc)])
+}
+
+model PriceHistory {
+  id         Int      @id @default(autoincrement())
+  coin       String
+  price      Float?
+  volume24h  Float?
+  change24h  Float?
+  timestamp  DateTime @default(now())
+
+  @@unique([coin, timestamp])
+}

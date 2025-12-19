@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Gray Theme inspired by #e5e7eb */
+  --background: #E5E7EB;
+  --foreground: #334155;
+  /* Slate-700 */
+  --background-secondary: #F3F4F6;
+  --background-card: #FFFFFF;
+
+  /* Professional accent colors for light theme */
+  --profit: #10B981;
+  /* Emerald green */
+  --loss: #EF4444;
+  /* Rose red */
+  --accent: #94A3B8;
+  /* Slate-400 */
+  --border: #D1D5DB;
+  /* Light gray border */
+
+  /* Model Colors - Optimized for light background */
+  --deepseek: #8B5CF6;
+  --qwen: #3B82F6;
+  --grok: #F97316;
+  --claude: #475569;
+  --gemini: #0284C7;
+  --gpt5: #059669;
+  --btc: #64748B;
+
+  /* Additional design tokens */
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  --surface-hover: #F9FAFB;
+  --surface-active: #F3F4F6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-profit: var(--profit);
+  --color-loss: var(--loss);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  --color-deepseek: var(--deepseek);
+  --color-qwen: var(--qwen);
+  --color-grok: var(--grok);
+  --color-claude: var(--claude);
+  --color-gemini: var(--gemini);
+  --color-gpt5: var(--gpt5);
+  --color-btc: var(--btc);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light theme scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.grid-line {
+  background-color: var(--border);
+}
+
+/* Card styling for light theme */
+.card-light {
+  background: var(--background-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.card-light:hover {
+  border-color: #9CA3AF;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}

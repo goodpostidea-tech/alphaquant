@@ -1,0 +1,184 @@
+{
+    "common": {
+        "dashboard": "Dashboard",
+        "strategies": "Strategies",
+        "risk": "Risk Mgmt",
+        "marketData": "Market Data",
+        "systemLogs": "System Logs",
+        "settings": "Settings",
+        "proTier": "Pro Tier",
+        "totalEquities": "Total Equities",
+        "sessionAlpha": "Session Alpha",
+        "error": "Something went wrong"
+    },
+    "terminal": {
+        "liveTerminal": "Live Terminal",
+        "wssConnected": "WSS CONNECTED",
+        "councilConsensus": "Council Consensus",
+        "highConjunction": "HIGH CONJUNCTION",
+        "initializingTerminal": "Initializing Alpha Quant Terminal..."
+    },
+    "dashboard": {
+        "title": "AlphaQuant Stock Terminal",
+        "status": "Stock Market Analysis Active | Mode: Autonomous",
+        "performanceBenchmark": "Strategy Performance Benchmark (Alpha vs S&P 500)",
+        "agentMatrix": "Quant Agent Matrix",
+        "benchmarkTitle": "Agentic Benchmark (Real-time)",
+        "consensusNote": "Models currently show % {value} on Bullish momentum."
+    },
+    "table": {
+        "agent": "Strategy Agent",
+        "sharpe": "Sharpe",
+        "maxDD": "Max DD",
+        "alpha": "Alpha"
+    },
+    "exposure": {
+        "liveRatio": "Equity Exposure Ratio",
+        "totalCapital": "Total Capital",
+        "cash": "Cash"
+    },
+    "agentStats": {
+        "confidence": "Confidence",
+        "stability": "Stability",
+        "latency": "Latency",
+        "conf": "CONF"
+    },
+    "footer": {
+        "marketStatus": "NASDAQ CONNECTED"
+    },
+    "topNav": {
+        "home": "Home",
+        "terminal": "Equity Terminal",
+        "sentiment": "Market Sentiment",
+        "bullish": "BULLISH",
+        "bearish": "BEARISH",
+        "network": "Network",
+        "ping": "Latency",
+        "searchPlaceholder": "Search tickers (e.g. NVDA, TSLA)..."
+    },
+    "strategies": {
+        "title": "Strategy Management Matrix",
+        "config": "CONFIG",
+        "globalControls": "Global Risk Controls",
+        "pauseAll": "Emergency Pause",
+        "resumeAll": "Resume Council",
+        "liquidateAll": "Liquidate All",
+        "active": "Active",
+        "paused": "Paused",
+        "initializing": "Initializing",
+        "perfDrift": "Alpha Drift",
+        "maxPosition": "Max Pos %",
+        "stopLoss": "Hard SL %",
+        "volGate": "Vol Gate (VIX)",
+        "marketStatus": "Market Status",
+        "session": {
+            "regular": "REGULAR",
+            "pre": "PRE-MARKET",
+            "after": "AFTER-HOURS",
+            "closed": "CLOSED"
+        },
+        "modal": {
+            "title": "Configure Strategy",
+            "save": "Save Changes",
+            "cancel": "Cancel",
+            "maxPosDesc": "Maximum position size as % of total equity",
+            "stopLossDesc": "Hard stop loss trigger percentage"
+        },
+        "deployModal": {
+            "title": "Deploy New Agent",
+            "name": "Agent Name",
+            "provider": "Provider (e.g. OpenAI)",
+            "symbol": "Target Symbol",
+            "maxPos": "Max Pos %",
+            "stopLoss": "Hard SL %",
+            "deploy": "Deploy Agent",
+            "cancel": "Cancel"
+        }
+    },
+    "risk": {
+        "title": "Risk Guardian",
+        "systemStatus": "System Status",
+        "profile": "Profile",
+        "healthScore": "Health Score",
+        "dailyBudget": "Daily Risk Budget",
+        "dailyRiskBudget": "Daily Risk Budget",
+        "used": "Used",
+        "vix": "VIX",
+        "exposure": "Exposure",
+        "liveAlerts": "Live Alerts",
+        "activeTriggers": "Active Triggers",
+        "riskLogs": "Risk Logs",
+        "eventHistory": "Event History",
+        "noAlerts": "All Systems Nominal",
+        "allSystemsNominal": "All Systems Nominal",
+        "noHistory": "No historical events",
+        "noHistoricalEvents": "No historical events",
+        "ack": "Ack",
+        "status": {
+            "normal": "Normal",
+            "warning": "Warning",
+            "defense": "Defense",
+            "halt": "Halt"
+        },
+        "settings": {
+            "title": "Risk Profile Configuration",
+            "desc": "Select a risk profile to dynamically adjust global circuit breakers and exposure limits.",
+            "conservative": {
+                "label": "Conservative",
+                "desc": "Prioritize capital preservation. Strict limits."
+            },
+            "growth": {
+                "label": "Growth (Default)",
+                "desc": "Balanced approach for steady compounding."
+            },
+            "aggressive": {
+                "label": "Aggressive",
+                "desc": "Max leverage for high conviction plays."
+            },
+            "maxDD": "Max Drawdown",
+            "maxDrawdown": "Max Drawdown",
+            "vixWarning": "VIX Warning",
+            "done": "Done"
+        }
+    },
+    "models": {
+        "title": "Model Management",
+        "addTitle": "Add New Model Network",
+        "desc": "Configure your AI brains and API connectivity",
+        "addDesc": "Connect to a new LLM provider",
+        "activeModels": "Active Models",
+        "endpointMetrics": "Endpoint Metrics",
+        "addBtn": "Add Model",
+        "connectBtn": "Connect Model",
+        "disconnect": "Disconnect",
+        "connect": "Connect",
+        "cancel": "Cancel",
+        "done": "Done",
+        "name": "Model Name",
+        "provider": "Provider",
+        "apiKey": "API Key",
+        "endpoint": "Endpoint URL (Optional)",
+        "status": "Status",
+        "lastActive": "Last Active",
+        "systemOptimal": "System Status: Optimal"
+    },
+    "auth": {
+        "title": "Terminal Access",
+        "regTitle": "Create Operator Account",
+        "desc": "AlphaQuant Autonomous Trading Node",
+        "signIn": "Sign In",
+        "register": "Register",
+        "name": "Full Name",
+        "email": "Email Address",
+        "password": "Password",
+        "namePlaceholder": "Enter your name",
+        "emailPlaceholder": "name@company.com",
+        "passPlaceholder": "••••••••",
+        "loading": "Authenticating...",
+        "enter": "Enter Terminal",
+        "create": "Create Operator",
+        "secure": "SECURE AES-256 ENCRYPTED SESSION",
+        "logout": "Log Out",
+        "operator": "Operator"
+    }
+}
