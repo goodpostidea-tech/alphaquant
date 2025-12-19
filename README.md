@@ -22,6 +22,22 @@
 
 Alpha Quant is an autonomous AI-driven quantitative trading terminal that leverages multiple Large Language Models (LLMs) to make intelligent trading decisions. The platform provides a Bloomberg-style professional trading interface with real-time market data, strategy management, risk controls, and comprehensive performance analytics.
 
+### 📸 Screenshots
+
+<div align="center">
+
+#### Main Dashboard
+![Main Dashboard](./public/dashboard-screenshot.png)
+
+*Complete trading terminal interface with performance charts, strategy management, and risk monitoring*
+
+#### Agent Deployment
+![Agent Deployment](./public/deploy-agent-screenshot.png)
+
+*Deploy and configure new AI trading agents with customizable risk parameters*
+
+</div>
+
 ### ✨ Key Features
 
 - **🤖 Multi-Model Consensus Trading**: Orchestrates multiple LLM providers (DeepSeek, GPT, Claude) to generate trading decisions through consensus mechanisms
@@ -194,6 +210,22 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### 项目概述
 
 Alpha Quant 是一个自主驱动的 AI 量化交易终端，利用多个大语言模型（LLM）做出智能交易决策。该平台提供 Bloomberg 风格的专业交易界面，包含实时市场数据、策略管理、风险控制和全面的性能分析。
+
+### 📸 界面截图
+
+<div align="center">
+
+#### 主仪表板
+![主仪表板](./public/dashboard-screenshot.png)
+
+*完整的交易终端界面，包含性能图表、策略管理和风险监控*
+
+#### 代理部署
+![代理部署](./public/deploy-agent-screenshot.png)
+
+*部署和配置新的 AI 交易代理，支持自定义风险参数*
+
+</div>
 
 ### ✨ 核心功能
 
